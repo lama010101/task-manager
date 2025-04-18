@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,16 +13,29 @@ export default function Home() {
           height={38}
           priority
         />
+        
+        <div className="text-center sm:text-left">
+          <h1 className="text-3xl font-bold mb-4">Task Manager</h1>
+          <p className="mb-6">A Next.js application with Supabase integration for managing projects and tasks.</p>
+          
+          <Link 
+            href="/projects" 
+            className="inline-block rounded-full px-5 py-3 bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+          >
+            View Projects
+          </Link>
+        </div>
+
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
+            Get started by viewing your{" "}
+            <Link href="/projects" className="text-blue-600 hover:underline">
+              projects
+            </Link>
             .
           </li>
           <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+            Create new tasks and manage your workflow efficiently.
           </li>
         </ol>
 
